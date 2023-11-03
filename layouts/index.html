@@ -5,8 +5,9 @@
         <img class={{ .Site.Params.AvatarSize | default "size-m" }} src='{{ .Scratch.Get "avatarImgSrc" }}' alt="{{ .Site.Params.AvatarAltText|default "avatar" }}" />
         {{ end }}
 	</div>
-
-    <h1>{{ .Site.Title }}</h1>
+    {{ if isset .Site.Params "name" }}
+        <h1>{{ .Site.Params.Name }}</h1>
+    {{ end }}
     {{ if isset .Site.Params "description" }}
         <h3>{{ .Site.Params.Description }}</h3>
     {{ end }}
